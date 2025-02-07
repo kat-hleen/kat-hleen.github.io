@@ -25,7 +25,8 @@ h1 {
 </head>
 <body>
     <h1>Lab 2: Objects</h1>
-contents of the bodyy
+    <script src="labtwo.js"></script>
+ I drew my cat Lulu. Her eyes follow the cursor.
         
 
 </body>
