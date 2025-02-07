@@ -11,7 +11,7 @@ h1 {
     font-family: "Courier New", "Lucida Console", monospace;
     color: #51465c;
     text-align: center;
-    
+
 
 
 }
@@ -24,7 +24,7 @@ h1 {
     <script src="p5.min.js"></script>
 </head>
 <body>
-    <h1>Lab 2: Patterns from Iteration</h1>
+    <h1>Lab 1: Patterns from Iteration</h1>
     <script src="sketch.js"></script>
     hi
         

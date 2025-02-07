@@ -26,10 +26,19 @@ h1 {
 
 }
 
+h2{
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+}
+
+
+
+
+
 p{
     font-family: "Courier New", "Lucida Console", monospace;
     color: #51465c;font-family: "Courier New", "Lucida Console", monospace;
-    padding-left: 2%;
+
 }
 
 
