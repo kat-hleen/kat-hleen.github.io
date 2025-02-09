@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+
+body {
+    background-color:  rgb(209, 243, 193);
+}
+
+h1 {
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+    text-align: center;
+    
+
+
+}
+
+    </style>
+    <title>Lab 2</title>
+    <script src="p5.min.js"></script>
+
+
+</head>
+<body>
+    <h1>Lab 2: Objects</h1>
+    <script src="labtwo.js"></script>
+ I drew my cat Lulu. Her eyes follow the cursor.
+        
+
+</body>
+</html>
