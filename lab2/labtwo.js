@@ -1,3 +1,11 @@
+
+
+
+
+//i made objects to hold the attributes of the shape i want to create on the screen
+//i also added a draw function to the object so i can call it in the draw() 
+// i made objects for the cats ears doing the same thing
+
 var kitty = {
     x:200,
     y:200,
@@ -41,12 +49,14 @@ var kitty = {
   
   function setup() {
     createCanvas(400, 400);
+    //angleMode sets the unit system to measure angles https://p5js.org/reference/p5/angleMode/
     angleMode(DEGREES);
     noStroke();
   }
   
   function draw() {
     background('pink');
+    //i called upon these opbjects to draw them onto the canvas
     kitty.draw();
     earone.draw();
     eartwo.draw();
@@ -55,9 +65,14 @@ var kitty = {
   let leftX= 150;
   let leftY = 200;
   
+
+  //calculates the angle formed by a point, the origin, and the positive x-axis https://p5js.org/reference/p5/atan2/
   // calculate angle between left eye and mouse
   let leftAngle = atan2(mouseY - leftY, mouseX - leftX);
   
+
+  //push() and pop() functions can limit the effect of styles and transformations to a specific group of shapes, images and text
+  // in this case my push and pull holds the pupils of the cat for each eye 
   push();
   translate(leftX, leftY);
   fill(255);

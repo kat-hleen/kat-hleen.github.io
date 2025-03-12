@@ -1,0 +1,227 @@
+
+
+
+body {
+    margin: 0;
+    background-color: rgb(209, 243, 193);
+    background-image: url("cherry.jpg");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: scroll;
+    
+}
+
+h1 {
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+
+  
+    text-align: left;
+    padding-top: 42%;
+    padding-left: 5px;
+    border-bottom: solid;
+    border-color: #f7cadf;
+
+}
+
+h2{
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+
+
+
+
+p{
+    padding-left: 10px;
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;font-family: "Courier New", "Lucida Console", monospace;
+
+}
+
+
+ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 750px;
+    position: absolute;
+    background-color:rgb(233, 207, 210) ;
+    overflow: auto;
+    
+
+
+}
+
+
+li a {
+
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: black;
+    padding: 18px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color:  rgb(250, 149, 179);
+    color: black;
+}
+
+a.active {
+    background-color:  rgb(250, 149, 179);
+    color: black;
+
+}
+
+
+.column {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    margin-left: 30%;
+    height: 100%;
+}
+
+
+h2 {
+   text-align: center;
+    height: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+.card {
+    position: relative;
+    max-width: 800px;
+    background-color: rgb(220, 247, 197) ;
+    padding: 20px;
+    margin: 0px;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+/* style the next and previous buttons, 
+https://www.w3schools.com/howto/howto_js_slideshow.asp the caption text and the dots*/
+* {box-sizing: border-box}
+
+/* slideshow container*/ 
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+/*hide the images by default*/
+.mySlides {
+    display: none;}
+    img {vertical-align: middle;}
+
+
+
+/* next and previous buttons */
+.prev, .next {
+    
+    cursor: pointer;
+    position: absolute;
+
+    width: auto;
+
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+.prev {
+    left: 0; 
+}
+
+/*postion the next button to the right*/
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+
+
+/*on hover, add a black background color thats a little bit see through*/
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/*caption text*/
+.text {
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* number text*/
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* the dots/bullets/indicators */
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb; 
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/*fading animation */ 
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {font-size: 11px}
+}
