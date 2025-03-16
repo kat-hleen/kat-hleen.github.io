@@ -4,7 +4,8 @@
 let nameInput;
 let fontSelect;
 let foodRadio;
-let fontChanged;
+
+let currentFont = 'Arial';
 
 
 
@@ -13,53 +14,65 @@ let button;
 let greeting;
 
 function  setup() {
-    createCanvas (800, 500); 
+    console.log("does this shit work lmfao?");
+    let cardWidth = document.getElementById("canvas-container").offsetWidth;
+   let canvas = createCanvas (cardWidth, 500); 
+   canvas.parent("canvas-container"); //attach to the div in html 
 
    // use greeting variable to ask for input
-    greeting = createElement('h2', 'What is your name?');
-    greeting.position(25,480)
+    greeting = createElement( 'h2', 'What is your name?');
+    greeting.parent("canvas-container");
+    greeting.style('text-align', 'center');
+    greeting.style('width', '100%');
 
    
 
     //assign an input to nameInput
     nameInput = createInput();
-    nameInput.position(25, 550);
+    nameInput.parent("canvas-container");
+    nameInput.style('width', '80%');
+    nameInput.style('display', 'block');
+    nameInput.changed(greet);
 
     //button
-   let button = createButton('submit');
-    button.position(750, 400);
-
-    //use the mousePressed() method to call the greet() function when the button is pressed
+    button = createButton('submit');
+    button.parent("canvas-container");
+    button.style('display', 'block');
+    button.style('margin', '10px auto');
     button.mousePressed(greet);
 
-    //call greet function when input is changed and enter/return button is pressed
-    nameInput.changed(greet);
+  
 
     //assign radio buttons to foodRadio
     foodRadio = createRadio();
-    foodRadio.position(25, 850);
+    foodRadio.parent("canvas-container");
+    foodRadio.style('display', 'block');
 
     //list options for foodRadio along w background color
-    foodRadio.option('#F7F5BC', 'Peach');
-    foodRadio.option('#B8E3FF', 'Blueberries');
-    foodRadio.option('#C79A9A', 'banana');
+    foodRadio.option('#F7F5BC', 'Yellow');
+    foodRadio.option('#B8E3FF', 'Blue');
+    foodRadio.option('#C79A9A', 'Pink');
 
     //assign a dropdown to font select
     fontSelect = createSelect();
-    fontSelect.position(25, 900);
+    fontSelect.parent("canvas-container");
+    fontSelect.style('margin', '10px auto');
+
 
     //list out the dropdown options for fontSelect
-    fontSelect.option('Sans-serif');
-    fontSelect.option('Serif');
-    fontSelect.option('Cursive');
+    fontSelect.option('Arial');
+    fontSelect.option('Times New Roman');
+    fontSelect.option('Courier New');
 
+    fontSelect.changed(fontChanged);
 
+    windowResized();
 
 }
 
 function greet() {
     //refresh the canvas background to clear any previous inputs
-    background(255);
+    background(245);
 
     //connect the  name variable to the inputs value
     let name = nameInput.value();
@@ -71,38 +84,38 @@ function greet() {
     nameInput.value('');
 
     //draw name on the canvas
-    textSize(100);
+    textFont(currentFont);
+    textSize(50);
     textAlign(CENTER, CENTER);
+
     text(name, width / 2, height / 2);
 }
 
 
 function draw() {
 
+    background(foodRadio.value());
 
-   
-
-    //if fontSelect is changes, call the function fontChanged funtion
-    fontSelect.changed(fontChanged);
-    //set the background color to the current foodRadio value
-    let backgroundColor = foodRadio.value();
-   background (backgroundColor);
-
-
-   
-
+   textFont(currentFont);
    // create the text inputs that will update with the new user inputs
     textSize(25);
-    text(`What is your name? ${nameInput.value()}`, 25, 100 );
-    text('What is your favorite fruit?' , 25, 200);
 
-    function fontChanged() {
-        //whent the fontSelect value is changed, update the canvas font to the new value
-        let fontSelection = fontSelect.value();
-        textFont(fontSelection);
+    textAlign(CENTER, CENTER);
+    fill(0);
+
+}
+function fontChanged() {
+    let fontSelection = fontSelect.value();
+    textFont(fontSelection);
+   //currentFont = fontSelect.value();
 
     }
 
+function windowResized() {
+    let cardWidth = document.getElementById("canvas-container").offsetWidth;
+    resizeCanvas(cardWidth, 500);
+}
+
+
    
 
-}

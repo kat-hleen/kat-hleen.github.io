@@ -53,7 +53,7 @@ ul {
     margin: 0;
     padding: 0;
     width: 30%;
-    height: 750px;
+    height: 800px;
     position: absolute;
     background-color:rgb(233, 207, 210) ;
     overflow: auto;
@@ -87,12 +87,10 @@ a.active {
 
 
 .column {
-    max-width: 1000px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    margin: 0;
     margin-left: 30%;
     height: 100%;
 }
@@ -109,13 +107,11 @@ h2 {
 
 
 .card {
-    position: relative;
-    max-width: 800px;
+    max-width: 90%;
     background-color: rgb(220, 247, 197) ;
     padding: 20px;
     margin: 0px;
-    align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
