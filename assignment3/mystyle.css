@@ -1,0 +1,172 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: "Courier New";
+}
+
+
+#name-input-container  {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#player-name {
+    padding: 5px;
+    font-family: "Courier New", 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    margin: 10px;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(209, 243, 193);
+    background-image: url("cherry.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: scroll;
+    align-items: center;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: hsl(200, 100%, 50%);
+    border: 1px solid hsl(200, 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+
+  
+    text-align: left;
+    padding-top: 42%;
+    padding-left: 5px;
+    border-bottom: solid;
+    border-color: #f7cadf;
+
+}
+
+h2{
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;
+}
+
+
+
+
+
+p{
+    padding-left:5px;
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: #51465c;font-family: "Courier New", "Lucida Console", monospace;
+
+}
+
+
+ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 800px;
+    position: absolute;
+    background-color:rgb(233, 207, 210) ;
+    overflow: auto;
+    
+
+
+}
+
+
+li a {
+
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: black;
+    padding: 18px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color:  rgb(250, 149, 179);
+    color: black;
+}
+
+a.active {
+    background-color:  rgb(250, 149, 179);
+    color: black;
+
+}
+
+
+
+.column {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: 30%;
+    height: 100%;
+}
+
+h2 {
+   text-align: center;
+    height: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+
+.card {
+    max-width: 90%;
+    background-color: rgb(220, 247, 197) ;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+
+
