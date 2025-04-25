@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="myportfolio.css">
+    </head>
+    <body>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" class="active">Portfolio</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+      
+          
+          <section class="portfolio-section">
+            <h2>My Collections</h2>
+            <div class="portfolio-grid">
+              <a href="portfolioworks/index.html" class="collection-card">
+                <img src="worldofplay.jpg" alt="portfolio">
+                <div class="card-text">
+                  <h3>Portfolio Works</h3>
+                  <p>Pieces that demonstrate versitality and design.</p>
+                </div>
+              </a>
+          
+              <a href="tattoodesigns/index.html" class="collection-card">
+                <img src="butterflyheart.jpg" alt="tattoo designs">
+                <div class="card-text">
+                  <h3>Tattoo Designs</h3>
+                  <p>Commisioned designs and experimental pieces.</p>
+                </div>
+              </a>
+          
+              <a href="concepts/index.html" class="collection-card">
+                <img src="snakepeony.jpg" alt="sketches & wips">
+                <div class="card-text">
+                  <h3>Sketches & WIPs</h3>
+                  <p>Loose and lively drawings from my sketchbooks and daily practice.</p>
+                </div>
+              </a>
+          
+              <a href="crafts/index.html" class="collection-card">
+                <img src="explosionboxsabrina.jpg" alt="crafting">
+                <div class="card-text">
+                  <h3>Craft Projects</h3>
+                  <p>Experimental mixed media.</p>
+                </div>
+              </a>
+
+              <a href="photography/index.html" class="collection-card">
+                <img src="cherry.jpg" alt="photography">
+                <div class="card-text">
+                  <h3>Photography</h3>
+                  <p>A gallery of photos that represent me.</p>
+                </div>
+              </a>
+            </div>
+          </section>
+          
+
+
+
+        <script>
+          function restartAnimation(el, className) {
+              el.classList.remove(className);
+              void el.offsetWidth;
+              el.classList.add(className);
+            }
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              const target = entry.target;
+
+             //fade in navbar
+             if (target.classList.contains('navbar')) {
+                    target.classList.add('visible');
+                  }
+
+                });
+              }, { threshold: 0.3 }); 
+
+            observer.observe(document.querySelector('.navbar'));
+        </script>
+
+
+
+     </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kathleen's Website</title>
+        <link rel="stylesheet" href="myportfolio.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-list">
+              <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+              <li><a href="../index.html">HOME</a></li>
+              <li><a class="active" href="#home">PORTFOLIO</a></li>
+              <li><a href="blog/index.html">BLOG</a></li>
+              <li><a href="contact/index.html">CONTACT</a></li>
+            </ul>
+          </nav>
+      
+        <script>
+          function restartAnimation(el, className) {
+              el.classList.remove(className);
+              void el.offsetWidth;
+              el.classList.add(className);
+            }
+          
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              const target = entry.target;
+
+             //fade in navbar
+             if (target.classList.contains('navbar')) {
+                    target.classList.add('visible');
+                  }
+
+                });
+              }, { threshold: 0.3 }); 
+
+            observer.observe(document.querySelector('.navbar'));
+        </script>
+
+
+
+     </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kathleen's Website</title>
+        <link rel="stylesheet" href="blog.css">
+    </head>
+    <body>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../myportfolio/index.html">Portfolio</a></li>
+          <li><a href="index.html" class="active">Blog</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+      
+
+
+
+
+
+
+      <section class="blog-preview-section">
+        <h2>From the Blog</h2>
+        <div class="blog-preview-grid" id="blog-container">
+          <!-- Posts will be injected here -->
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </section>
+    
+   
+
+
+        <script>
+          function restartAnimation(el, className) {
+              el.classList.remove(className);
+              void el.offsetWidth;
+              el.classList.add(className);
+            }
+          
+            const fadeObserver = new IntersectionObserver((entries) => {
+               entries.forEach(entry => {
+              const target = entry.target;
+             if (entry.isIntersecting) {
+            target.classList.add('visible');
+            }
+           });
+           }, { threshold: 0.3 });
+
+           document.querySelectorAll('.navbar, .blog-card').forEach(el => fadeObserver.observe(el));
+      
+      
+        </script>
+
+        <script src="blog.js"></script>
+
+
+
+     </body>
+</html>

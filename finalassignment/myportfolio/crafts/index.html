@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Craft Projects</title>
+        <link rel="stylesheet" href="crafts.css">
+    </head>
+    <body>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="../../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="collection-nav fade-in">
+        <a href="../index.html">← Back to Portfolio</a>
+        <a href="../portfolioworks/index.html">Portfolio</a>
+        <a href="../tattoodesigns/index.html">Tattoo Designs</a>
+        <a href="../concepts/index.html" >Sketches & WIPS</a>
+        <a href="../crafts/index.html" class="active">Craft Projects</a>
+        <a href="../photography/index.html">Photography</a>
+      </div>
+
+      <section class="gallery-section">
+        <h2 class="gallery-title">Craft Projects</h2>
+        <p class="collection-description fade-in">An exploration of different mediums and media.</p>
+
+        <div class="gallery-grid smaller">
+          <div class="gallery-item fade-in" onclick="expandItem('craftimages/claydessert.jpg', 'Clay Dessert Keychains', 'Made wth oven baked polymer clay and coated with varnish.')">
+            <img src="craftimages/claydessert.jpg" alt="clay keychain" />
+          </div>
+          <div class="gallery-item fade-in" onclick="expandItem('craftimages/explosionboxsabrina.jpg', 'Explosion box', 'For Sabrina.')">
+            <img src="craftimages/explosionboxsabrina.jpg" alt="explosion box 1" />
+          </div>
+          <div class="gallery-item fade-in" onclick="expandItem('craftimages/explosionboxx.JPG', 'Explosion Box Ver 2', 'For Priyanka.')">
+            <img src="craftimages/explosionboxx.JPG" alt="explosion box 2" />
+          </div>
+        </div>
+
+        <div class="expanded-view" id="expandedView">
+            <img id="expandedImage" src="" alt="Expanded crafts">
+            <div class="expanded-info">
+              <h3 id="expandedTitle"></h3>
+              <p id="expandedDescription"></p>
+              <button class="back-button" onclick="closeExpanded()">← Back</button>
+            </div>
+          </div>
+          
+        </section>
+
+
+      <script>
+      function expandItem(imageSrc, titleText, descriptionText) {
+          const view = document.getElementById("expandedView");
+          document.getElementById("expandedImage").src = imageSrc;
+          document.getElementById("expandedTitle").innerText = titleText;
+          document.getElementById("expandedDescription").innerText = descriptionText;
+          view.classList.add("visible");
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.navbar, .fade-in, .gallery-title').forEach(el => observer.observe(el));
+        function closeExpanded() {
+        document.getElementById("expandedView").classList.remove("visible");
+        }
+
+      </script>
+    </body>
+ </html>

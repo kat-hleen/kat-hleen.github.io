@@ -1,12 +1,197 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Final Assignment</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kathleen's Website</title>
+        <link rel="stylesheet" href="mywebsite.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-list">
+              <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="myportfolio/index.html">Portfolio</a></li>
+              <li><a href="blog/index.html">Blog</a></li>
+              <li><a href="contact/index.html">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="hero-section">
+            <img src="cherry.jpg" alt="Background">
+            <div class="hero-text">
+              <div class="line">
+                <span class="typed-text">Kathleen Arawiran</span>
+              </div>
+              <div class="line">
+                  <span class="typed-subtitle">Student Illustrator</span>
+              </div>
+            </div>
+          </div>
+          
+          <section class="about-section">
+            <div class="about-content">
+              <div class="about-video">
+                <video src="animation.mp4" controls></video>
+              </div>
+              <div class="about-text">
+                <h2>Nice to meet you!</h2>
+                <p>
+                  Hello! My name is Kathleen - a student illustrator and designer exploring visual storytelling through technology and game engines. I love incorporating digital tools with traditional styles to create art that connects. 
+                </p>
+                <div class="about-buttons">
+                  <a href="myportfolio/index.html" class="btn">Check out my work!</a>
+                  <a href="contact/index.html" class="btn secondary">Message Me!</a>
+                </div>
+              </div>
+            </div>
+          </section>
 
-    contents of the bodyy
-        
+          <section class="gallery-section">
+            <h2>Featured Works</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="luludrawing.JPG" alt="artwork 1">
+                <div class="overlay">
+                  <h3>Lulu Sticker</h3>
+                  <p>Sticker design of my cat Lulu</p>
+                  <a href="myportfolio/index.html" class="view-more">View Details</a>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="peonies.jpg" alt="artwork 2">
+                <div class="overlay">
+                  <h3>Fine line Peonies</h3>
+                  <p>Warm up flower sketch.</p>
+                  <a href="myportfolio/index.html" class="view-more">View Details</a>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="worldofplay.jpg" alt="artwork 3">
+                <div class="overlay">
+                  <h3>Wolrd of Play</h3>
+                  <p>Portfolio piece exploring 'play'.</p>
+                  <a href="myportfolio/index.html" class="view-more">View Details</a>
+                </div>
+              </div>
+            </div>
+          </section>
 
-</body>
+          <section class="blog-preview-section">
+            <h2>From the Blog</h2>
+            <div class ="blog-preview-grid">
+              <div class="blog-card">
+                <img src="worldofplaysketch.jpg" alt="Blog post 1">
+                <div class="blog-content">
+                  <h3>Creative process: Behind the Scenes!</h3>
+                  <p>Sketch for World of Play</p>
+                  <a href="blog/index.html" class="read-more">Read More</a>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <img src="tattoosketches.jpg" alt="blog post 2">
+                <div class="blog-content">
+                  <h3>Inspiration</h3>
+                  <p>What Inspires me to do Stuff?</p>
+                  <a href="blog/index.html" class="read-more">Read More</a>
+                </div>
+              </div>
+
+              <div class="blog-card">
+                <img src="artfromashes.jpg" alt="blog post 3">
+                <div class="blog-content">
+                  <h3>Mixed Media Project Concept Sketch</h3>
+                  <p>Art From Ashes.</p>
+                  <a href="blog/index.html" class="read-more">Read More</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+
+
+          <script>
+
+
+
+
+
+
+            function restartAnimation(el, className) {
+              el.classList.remove(className);
+              void el.offsetWidth;
+              el.classList.add(className);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                const target = entry.target;
+
+                if (entry.isIntersecting) {
+                  //typing animation in hero section
+                  if (entry.target.classList.contains('hero-text')) {
+                    const text = entry.target.querySelector('.typed-text');
+                  const subtitle = entry.target.querySelector('.typed-subtitle');
+                  restartAnimation(text, 'animate');
+                  restartAnimation(subtitle, 'animate');
+                  }
+                  
+                  //fade in about section
+                  if (target.classList.contains('about-section')){
+                    target.classList.add('visible');
+                  }
+                  
+
+                  //fade in gallery section
+                  if (target.classList.contains('gallery-section')) {
+                    target.classList.add('visible');
+                  }
+
+                  //fade in blog gallery section 
+                  if (target.classList.contains('blog-preview-section')) {
+                    target.classList.add('visible');
+                  }
+
+                  //fade in navbar
+                  if (target.classList.contains('navbar')) {
+                    target.classList.add('visible');
+                  }
+
+                } else {
+                  //Fde out about section no scroll away
+                  if (target.classList.contains('about-section')) {
+                    target.classList.remove('visible');
+                  }
+                }
+              });
+            }, { threshold: 0.3 });
+
+            observer.observe(document.querySelector('.hero-text'));
+            observer.observe(document.querySelector('.about-section'));
+            observer.observe(document.querySelector('.navbar'));
+            observer.observe(document.querySelector('.gallery-section'));
+            observer.observe(document.querySelector('.blog-preview-section'));
+
+
+
+
+
+            //this is to highlight active nav link
+            const navLinks = document.querySelectorAll('.nav-list a');
+            const currentPath = window.location.pathname;
+
+            navLinks.forEach(link => {
+              const href = link.getAttribute('href');
+
+              //check if current path includes the href 
+              if (currentPath.includes(href)) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+              });
+            
+          </script>
+
+         
+    </body>
 </html>
