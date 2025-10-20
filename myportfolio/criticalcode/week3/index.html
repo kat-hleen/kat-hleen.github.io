@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Critical Code: Week 3</title>
+        <link rel="stylesheet" href="../critical.css">
+    </head>
+    <body>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../index.html">Portfolio</a></li>
+          <li><a href="../../blog/index.html">Blog</a></li>
+          <li><a href="../../contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+
+        <div class="collection-nav fade-in">
+        <a href="../../index.html">← Back to Portfolio</a>
+        <a href="../index.html">Critical Code</a>
+        <a href="../week1/index.html">Week 1</a>
+        <a href="../week2/index.html">Week 2</a>
+        <a href="index.html" class="active">Week 3</a>
+      </div>
+
+        
+
+         <script>
+                const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.navbar, .fade-in, .gallery-title').forEach(el => observer.observe(el));
+        function closeExpanded() {
+        document.getElementById("expandedView").classList.remove("visible");
+        }
+       </script>
+    </body>
+ </html>
