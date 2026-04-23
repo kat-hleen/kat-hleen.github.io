@@ -2,196 +2,149 @@
     <head>
         <meta charset="UTF-8">
         <title>Kathleen's Website</title>
-        <link rel="stylesheet" href="mywebsite.css">
+        <link rel="stylesheet" href="mywebsitenew.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar">
-            <ul class="nav-list">
-              <li class="nav-left"><a href="aboutme">Kathleen Arawiran</a></li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="myportfolio/index.html">Portfolio</a></li>
-              <li><a href="blog/index.html">Blog</a></li>
-              <li><a href="contact/index.html">Contact</a></li>
-            </ul>
-          </nav>
-          
           <div class="hero-section">
-            <img src="cherry.jpg" alt="Background">
-            <div class="hero-text">
-              <div class="line">
-                <span class="typed-text">Kathleen Arawiran</span>
-              </div>
-              <div class="line">
-                  <span class="typed-subtitle">Student Illustrator</span>
-              </div>
-            </div>
+
+            <!-- base image -->
+          <img src="room_base.jpg" class="room base">
+
+            <!-- glow overlays -->
+              <img src="contactbuttonfix.png" class="room glow contact-glow">
+              <img src="portfoliobuttonfix.png" class="room glow portfolio-glow">
+              <img src="resumebuttonfix.png" class="room glow resume-glow">
+              <img src="instabuttonfix.png" class="room glow instagram-glow">
+              <img src="itchiobuttonfix.png" class="room glow itch-glow">
+              <img src="meteorbuttonfix.png" class="room glow meteor-glow">
+              <img src="sketchbookbuttonfix.png" class="room glow sketchbook-glow">
+
+            <!-- hotspots -->
+            <a href="myportfolio/index.html" class="hotspot portfolio"></a>
+            <a href="contact/index.html" class="hotspot contact"></a>
+            <a href="resume.html" class="hotspot resume"></a>
+            <a href="https://www.instagram.com/katwiththeblackcat/" target="_blank" class="hotspot instagram"></a>
+            <a href="https://kyahsurin.itch.io/" target="_blank" class="hotspot itch"></a>
+            <a href="https://ajwm8103.itch.io/meteor-dome" class="hotspot meteor"></a>
+            <a href="mysketchbook/index.html" class="hotspot sketchbook"></a>
           </div>
           
-          <section class="about-section">
-            <div class="about-content">
-              <div class="about-video">
-                <video src="animation.mp4" controls></video>
-              </div>
-              <div class="about-text">
-                <h2>Nice to meet you!</h2>
-                <p>
-                  Hello! My name is Kathleen - a student illustrator and designer exploring visual storytelling through technology and game engines. I love incorporating digital tools with traditional styles to create art that connects. 
-                </p>
-                <div class="about-buttons">
-                  <a href="myportfolio/index.html" class="btn">Check out my work!</a>
-                  <a href="contact/index.html" class="btn secondary">Message Me!</a>
-                </div>
-              </div>
+
+          <div class="dialogue-box">
+
+            <!-- character portrait -->
+            <div class="portrait">
+              <img src="profilepic.png" alt="Character">
             </div>
-          </section>
 
-          <section class="gallery-section">
-            <h2>Featured Works</h2>
-            <div class="gallery-grid">
-              <div class="gallery-item">
-                <img src="luludrawing.JPG" alt="artwork 1">
-                <div class="overlay">
-                  <h3>Lulu Sticker</h3>
-                  <p>Sticker design of my cat Lulu</p>
-                  <a href="myportfolio/index.html" class="view-more">View Details</a>
-                </div>
-              </div>
-              <div class="gallery-item">
-                <img src="peonies.jpg" alt="artwork 2">
-                <div class="overlay">
-                  <h3>Fine line Peonies</h3>
-                  <p>Warm up flower sketch.</p>
-                  <a href="myportfolio/index.html" class="view-more">View Details</a>
-                </div>
-              </div>
-              <div class="gallery-item">
-                <img src="worldofplay.jpg" alt="artwork 3">
-                <div class="overlay">
-                  <h3>Wolrd of Play</h3>
-                  <p>Portfolio piece exploring 'play'.</p>
-                  <a href="myportfolio/index.html" class="view-more">View Details</a>
-                </div>
-              </div>
+            <!-- text area -->
+            <div class="dialogue-text">
+              <span class="name">KATHLEEN ARAWIRAN</span>
+              <p id="dialogue-line"></p>
+              <span class="arrow">▶</span>
             </div>
-          </section>
 
-          <section class="blog-preview-section">
-            <h2>From the Blog</h2>
-            <div class ="blog-preview-grid">
-              <div class="blog-card">
-                <img src="worldofplaysketch.jpg" alt="Blog post 1">
-                <div class="blog-content">
-                  <h3>Creative process: Behind the Scenes!</h3>
-                  <p>Sketch for World of Play</p>
-                  <a href="blog/index.html" class="read-more">Read More</a>
-                </div>
-              </div>
-
-              <div class="blog-card">
-                <img src="tattoosketches.jpg" alt="blog post 2">
-                <div class="blog-content">
-                  <h3>Inspiration</h3>
-                  <p>What Inspires me to do Stuff?</p>
-                  <a href="blog/index.html" class="read-more">Read More</a>
-                </div>
-              </div>
-
-              <div class="blog-card">
-                <img src="artfromashes.jpg" alt="blog post 3">
-                <div class="blog-content">
-                  <h3>Mixed Media Project Concept Sketch</h3>
-                  <p>Art From Ashes.</p>
-                  <a href="blog/index.html" class="read-more">Read More</a>
-                </div>
-              </div>
-            </div>
-          </section>
-          
-
-
-          <script>
+          </div>
 
 
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
 
+  // ALL glow elements
+  const glows = {
+    portfolio: document.querySelector(".portfolio-glow"),
+    contact: document.querySelector(".contact-glow"),
+    resume: document.querySelector(".resume-glow"),
+    instagram: document.querySelector(".instagram-glow"),
+    itch: document.querySelector(".itch-glow"),
+    meteor: document.querySelector(".meteor-glow"),
+    sketchbook: document.querySelector(".sketchbook-glow")
+  };
 
+  // ALL hotspots
+  const hotspots = {
+    portfolio: document.querySelector(".portfolio"),
+    contact: document.querySelector(".contact"),
+    resume: document.querySelector(".resume"),
+    instagram: document.querySelector(".instagram"),
+    itch: document.querySelector(".itch"),
+    meteor: document.querySelector(".meteor"),
+    sketchbook: document.querySelector(".sketchbook")
+  };
 
-            function restartAnimation(el, className) {
-              el.classList.remove(className);
-              void el.offsetWidth;
-              el.classList.add(className);
-            }
+  function resetGlow() {
+    Object.values(glows).forEach(glow => {
+      if (glow) glow.style.opacity = "0";
+    });
+  }
 
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                const target = entry.target;
+  // attach events safely
+  Object.keys(hotspots).forEach(key => {
+    const hotspot = hotspots[key];
+    const glow = glows[key];
 
-                if (entry.isIntersecting) {
-                  //typing animation in hero section
-                  if (entry.target.classList.contains('hero-text')) {
-                    const text = entry.target.querySelector('.typed-text');
-                  const subtitle = entry.target.querySelector('.typed-subtitle');
-                  restartAnimation(text, 'animate');
-                  restartAnimation(subtitle, 'animate');
-                  }
-                  
-                  //fade in about section
-                  if (target.classList.contains('about-section')){
-                    target.classList.add('visible');
-                  }
-                  
+    if (hotspot && glow) {
+      hotspot.addEventListener("mouseenter", () => {
+        resetGlow();
+        glow.style.opacity = "1";
+      });
 
-                  //fade in gallery section
-                  if (target.classList.contains('gallery-section')) {
-                    target.classList.add('visible');
-                  }
+      hotspot.addEventListener("mouseleave", resetGlow);
+    }
+  });
 
-                  //fade in blog gallery section 
-                  if (target.classList.contains('blog-preview-section')) {
-                    target.classList.add('visible');
-                  }
+});
 
-                  //fade in navbar
-                  if (target.classList.contains('navbar')) {
-                    target.classList.add('visible');
-                  }
+const dialogueLines = [
+  "Hi... I'm Kathleen.",
+  "I'm a student illustrator exploring interactive storytelling.",
+  "This room is part of my portfolio.",
+  "Click around to explore my work."
+];
 
-                } else {
-                  //Fde out about section no scroll away
-                  if (target.classList.contains('about-section')) {
-                    target.classList.remove('visible');
-                  }
-                }
-              });
-            }, { threshold: 0.3 });
+let dialogueIndex = 0;
+let charIndex = 0;
+let typing = false;
 
-            observer.observe(document.querySelector('.hero-text'));
-            observer.observe(document.querySelector('.about-section'));
-            observer.observe(document.querySelector('.navbar'));
-            observer.observe(document.querySelector('.gallery-section'));
-            observer.observe(document.querySelector('.blog-preview-section'));
+const dialogueEl = document.getElementById("dialogue-line");
+const box = document.querySelector(".dialogue-box");
 
+function typeLine() {
+  if (charIndex < dialogueLines[dialogueIndex].length) {
+    typing = true;
+    dialogueEl.textContent += dialogueLines[dialogueIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeLine, 25);
+  } else {
+    typing = false;
+  }
+}
 
+function showLine() {
+  dialogueEl.textContent = "";
+  charIndex = 0;
+  typeLine();
+}
 
+box.addEventListener("click", () => {
+  if (typing) {
+    dialogueEl.textContent = dialogueLines[dialogueIndex];
+    typing = false;
+    return;
+  }
 
+  dialogueIndex++;
 
-            //this is to highlight active nav link
-            const navLinks = document.querySelectorAll('.nav-list a');
-            const currentPath = window.location.pathname;
+  if (dialogueIndex < dialogueLines.length) {
+    showLine();
+  }
+});
 
-            navLinks.forEach(link => {
-              const href = link.getAttribute('href');
+showLine();
 
-              //check if current path includes the href 
-              if (currentPath.includes(href)) {
-                link.classList.add('active');
-              } else {
-                link.classList.remove('active');
-              }
-              });
-            
-          </script>
-
+</script>
          
     </body>
 </html>

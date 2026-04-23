@@ -1,0 +1,199 @@
+/* 🌸 page reset */
+body {
+  margin: 0;
+  background: #fff6fb;
+  overflow: hidden;
+}
+
+/* 🎮 main container */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /* match your image */
+
+}
+
+/* 🖼 images */
+.room {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* base layer */
+.base {
+  z-index: 1;
+}
+
+/* glow layers */
+.glow {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* 🖱 hotspots */
+.hotspot {
+  position: absolute;
+   z-index: 10;
+  cursor: pointer;
+}
+
+/* DEBUG (turn on if needed) */
+/*
+.hotspot {
+  background: rgba(255, 0, 0, 0.2);
+}
+*/
+
+/* 🎯 HOTSPOT POSITIONS (adjust as needed) */
+
+/* desk → portfolio */
+.portfolio {
+  top: 41%;
+  left: 27.8%;
+  width: 3.7%;
+  height: 4.5%;
+  transform: skewY(-30deg);
+}
+
+/* bed → about */
+.contact {
+  top: 57.4%;
+  left: 67.4%;
+  width: 10.3%;
+  height: 8%;
+  transform: skewY(-30deg);
+}
+
+/* window → contact */
+.resume {
+  top: 24.7%;
+  left: 65.9%;
+  width: 3.5%;
+  height: 3.7%;
+  transform: skewX(-15deg) skewY(25deg);
+}
+
+/* instagram */
+.instagram {
+  top: 28.5%;
+  left: 71.33%;
+  width: 2%;
+  height: 4.3%;
+    transform: skewX(-15deg) skewY(25deg);
+}
+
+/* itch.io */
+.itch {
+  top: 24.2%;
+  left: 52%;
+  width: 6.8%;
+  height: 10.5%;
+  transform: skewY(-30deg);
+}
+
+/* meteor page */
+.meteor {
+  top: 45.4%;
+  left: 23.5%;
+  width: 3.6%;
+  height: 5%;
+  transform: skewY(-30deg);
+}
+
+/* sketchbook */
+.sketchbook {
+  top: 77.3%;
+  left: 50.9%;
+  width: 4.6%;
+  height: 4.5%;
+  transform: skewY(-30deg);
+}
+
+/* 🎮 DIALOGUE BOX */
+.dialogue-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+ 
+
+  /* 🔽 smaller height */
+  padding: 8px 16px 8px 160px;
+
+  /* ✨ semi-transparent background */
+  background: rgba(0, 0, 0, 0.5);
+
+  /* ✨ subtle blur like modern games */
+  backdrop-filter: blur(3px);
+
+  border-top: 2px solid white;
+
+  z-index: 20;
+}
+
+/* 👤 portrait */
+.portrait {
+  position: absolute;
+  bottom: 20px;   /* aligns with box */
+  left: 20px;
+
+  width: 120px;
+  height: 120px;
+
+  background: white;
+  border: 4px solid black;
+
+  overflow: hidden;
+  z-index: 30; /* above box */
+  box-shadow: 0 6px 0 black;
+  transform: translateY(-10px);
+}
+
+/* image fills the box nicely */
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+/* 💬 text area */
+.dialogue-text {
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 9px;
+  line-height: 1.4;
+ 
+}
+
+/* name label */
+.name {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 8px;
+}
+
+/* text */
+#dialogue-line {
+  margin: 0;
+}
+
+.arrow {
+  float: right;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
